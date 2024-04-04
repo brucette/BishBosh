@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0 ;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+header {
+    background-color: aqua;
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid blue;
+}
+
+form {
+    border: 2px solid red;
+    padding: 1rem;
+    margin: 2rem;
+}
+section {
+    border: 2px solid green;
+    margin: 1rem;
+}
+
+.input-container {
+    margin: 0.5rem;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+input {
+    padding: 0.5rem;
+}
+
+/* Remove arrows from input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.output-display {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: aqua;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}
+/* turkoosi O1C4E8
+vaalean vihree D2E7C3 */

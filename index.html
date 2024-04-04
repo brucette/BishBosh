@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>BishBosh</title>
+</head>
+<body>
+    <header>
+        <h1>Bish-Bosh 2.0</h1>
+    </header>
+
+    <main>
+        <section>
+            <h3>Play the bish-bosh</h3>
+            <p></p>
+        </section>
+
+        <form action="" id="inputForm">
+            <div class="input-container">
+                <label for="loop">Enter number: </label>
+                <input 
+                id="loop"
+                type="number"
+                min="0" 
+                name="loop"
+                placeholder="Enter positive num">
+            </div>
+            <div class="input-container">
+                <label for="bish">Enter number: </label>
+                <input 
+                id="bish"
+                type="number" 
+                min="0" 
+                name="bish"
+                placeholder="Enter positive num">
+            </div>
+            <div class="input-container">
+                <label for="bosh">Enter number: </label>
+                <input 
+                id="bosh"
+                type="number" 
+                min="0" 
+                name="bosh"
+                placeholder="Enter positive num">
+            </div>
+            <div class="input-container">
+                <button type="submit">Get results!</button>
+            </div>
+        </form>
+
+        <section class="output-display">
+            <h3>Results</h3>
+            <!-- <p id="results"></p> -->
+            <div id="results"></div>
+        </section>
+    </main>
+
+    <script src="bishbosh.js"></script>
+    <footer>
+        <div class="">
+            <p>&copy; 2024</p>
+          </div>
+          <div class="">
+            <p>Webmaster: Tina Bruce</p>
+          </div>
+    </footer>
+</body>
+</html>

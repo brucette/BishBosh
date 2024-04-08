@@ -1,30 +1,30 @@
 // Bish-Bosh
-// for (let number = 1; number <= 100; number++)
-// {
-//     if (number % 3 === 0 && number % 4 === 0) {
-//         console.log('Bish-Bosh');
-//     } else if (number % 3 === 0) {
-//         console.log('Bish');
-//     } else if (number % 4 === 0) {
-//         console.log('Bosh');
-//     } else {
-//         console.log(number);
-//     }
-// }
+for (let number = 1; number <= 100; number++)
+{
+    if (number % 3 === 0 && number % 4 === 0) {
+        console.log('Bish-Bosh');
+    } else if (number % 3 === 0) {
+        console.log('Bish');
+    } else if (number % 4 === 0) {
+        console.log('Bosh');
+    } else {
+        console.log(number);
+    }
+}
 
 // Bish-Bosh 2.0
-let loop = document.querySelector('#loop');
-let bish = document.querySelector('#bish');
-let bosh = document.querySelector('#bosh');
-let results = document.querySelector('#results');
-const form = document.getElementById('inputForm');
-form.addEventListener('submit', getUserInput);
-
+const results = document.querySelector('#results');
+const output = document.querySelector('.output-display');
+const clearBtn = document.querySelector('#clearBtn');
+const form = document.querySelector('#inputForm');
+const loop = form['loop'];
+const bish = form['bish'];
+const bosh = form['bosh'];
 
 const bishBosh = (loop, bish, bosh) => {
 
     let output = '';
-    // if number is less than 1 or 1?
+    
     for (let number = 1; number <= loop; number++)
     {
         if (number % bish === 0 && number % bosh === 0) {
@@ -37,42 +37,23 @@ const bishBosh = (loop, bish, bosh) => {
             output += `${number}, `;
         }
     }
-    return output;
+
+    // Remove last comma
+    return output.slice(0, -2);
 }
 
-// const bishBosh = (loop, bish, bosh) => {
+function displayResults(event) {
 
-//     // if number is less than 1 or 1?
-//     for (let number = 1; number <= loop; number++)
-//     {
-//         if (number % bish === 0 && number % bosh === 0) {
-//             results.innerHTML += `<span>${'Bish-Bosh'}</span>`;
-//         } else if (number % bish === 0) {
-//             results.innerHTML += `<span>${'Bish'}</span>`;
-//         } else if (number % bosh === 0) {
-//             results.innerHTML += `<span>${'Bosh'}</span>`;
-//         } else {
-//             results.innerHTML += `<span>${number}</span>`;
-//         }
-//     }
-// }
-
-function getUserInput(event) {
     event.preventDefault();
-    // let results = document.getElementById('results');
-
     results.textContent = "";
-
-    // let loop = document.getElementById('loop').value;
-    // let bish = document.getElementById('bish').value;
-    // let bosh = document.getElementById('bosh').value;
-
+    output.classList.remove('hide');
     results.textContent = bishBosh(loop.value, bish.value, bosh.value);
-    
-    // clear input fields
-    // document.getElementById('loop').value = "";
-    // document.getElementById('bish').value = "";
-    // document.getElementById('bosh').value = "";
-    form.reset();
 };
 
+function clearForm() {
+    form.reset();
+    output.classList.add('hide');
+}
+
+form.addEventListener('submit', displayResults);
+clearBtn.addEventListener('click', clearForm);

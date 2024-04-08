@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="reset.css"> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
     <title>BishBosh</title>
 </head>
 <body>
@@ -14,47 +16,65 @@
 
     <main>
         <section>
-            <h3>Play the bish-bosh</h3>
-            <p></p>
+            <h3>Play the Bish-Bosh</h3>
+            <div>
+                <p class="intro"><strong>Bish-Bosh</strong> is a simple number game where you list 
+                    numbers from 1 to a certain maximum number, 
+                    but you replace some numbers with special words.</p>
+                <ul>
+                    <li>&#128073; If a number is evenly divisible by 3, it's replaced with <span class="bishBosh">"Bish"</span>.</li>
+                    <li>&#128073; If a number is evenly divisible by 4, it's replaced with <span class="bishBosh">"Bosh"</span>.</li>
+                    <li>&#128073; If a number is evenly divisible by both 3 and 4, it's replaced with <span class="bishBosh">"Bish-Bosh"</span>.</li>
+                </ul>
+                <p>
+                    The purpose of the webpage is to let users choose which numbers to replace with "Bish" and "Bosh", and 
+                    see the results on the screen.
+                </p>
+            </div>
         </section>
 
-        <form action="" id="inputForm">
+        <form id="inputForm">
             <div class="input-container">
-                <label for="loop">Enter number: </label>
+                <label for="loop">Enter maximum number: </label>
                 <input 
+                required
                 id="loop"
                 type="number"
                 min="0" 
                 name="loop"
-                placeholder="Enter positive num">
+                placeholder="E.g. 100">
             </div>
             <div class="input-container">
-                <label for="bish">Enter number: </label>
+                <label for="bish">Enter first divisible number: </label>
                 <input 
+                required
                 id="bish"
                 type="number" 
                 min="0" 
                 name="bish"
-                placeholder="Enter positive num">
+                placeholder="The &quot;Bish&quot;">
             </div>
             <div class="input-container">
-                <label for="bosh">Enter number: </label>
+                <label for="bosh">Enter second divisible number: </label>
                 <input 
+                required
                 id="bosh"
                 type="number" 
                 min="0" 
                 name="bosh"
-                placeholder="Enter positive num">
+                placeholder="The &quot;Bosh&quot;">
             </div>
             <div class="input-container">
                 <button type="submit">Get results!</button>
             </div>
         </form>
 
-        <section class="output-display">
+        <section class="output-display hide">
             <h3>Results</h3>
-            <!-- <p id="results"></p> -->
             <div id="results"></div>
+            <div class="clearBtnWrapper">
+                <button id="clearBtn">Clear the form</button>
+            </div>
         </section>
     </main>
 
